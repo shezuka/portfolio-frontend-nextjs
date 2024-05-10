@@ -1,20 +1,20 @@
 import React, { MouseEventHandler } from "react";
 import Image from "next/image";
 
-type CardLogoType = {
+type CardLogo = {
   url: string;
   alt: string;
   width: number;
   height: number;
 };
 
-type CardPropsType = {
+type CardProps = {
   children?: React.ReactNode;
   onClick?: MouseEventHandler<HTMLDivElement>;
-  logo?: CardLogoType;
+  logo?: CardLogo;
 };
 
-export default function Card(props: CardPropsType) {
+export default function Card(props: CardProps) {
   return (
     <div
       className="bg-secondary rounded-lg shadow-lg cursor-pointer hover:bg-primary hover:shadow-xl transition duration-300 select-none"

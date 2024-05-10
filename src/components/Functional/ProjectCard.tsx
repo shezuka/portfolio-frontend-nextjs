@@ -1,17 +1,17 @@
 "use client";
 
-import { ProjectType } from "@/types";
+import { Project } from "@/types";
 import { MouseEventHandler } from "react";
 import Card from "@/components/Elements/Card";
 
-type ProjectCardPropsType = {
-  project: ProjectType;
+type ProjectCardProps = {
+  project: Project;
   onClick?: MouseEventHandler<HTMLDivElement>;
 };
 
 export default function ProjectCard({
   project: { name, description, logoUrl, projectUrl },
-}: ProjectCardPropsType) {
+}: ProjectCardProps) {
   function onCardClick() {
     window.open(projectUrl, "_blank");
   }

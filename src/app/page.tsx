@@ -9,15 +9,11 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const onContactClick = () => {
-    alert(123);
-  };
-
   return (
     <>
       <header className="text-center p-20">
         <h1 className="text-4xl font-bold text-white mb-2">
-          Crafting Beautiful Solutions with Code
+          Engineering Impactful Software Experiences
         </h1>
         <p className="text-xl text-secondary">
           Dmytro Horbalynskyi | Senior Full-Stack Developer & React Expert

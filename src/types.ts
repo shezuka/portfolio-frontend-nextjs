@@ -4,7 +4,7 @@ export type ChildrenOnlyProps = {
   children: React.ReactNode;
 };
 
-export type ProjectType = {
+export type Project = {
   name: string;
   description: string;
   logoUrl: string;

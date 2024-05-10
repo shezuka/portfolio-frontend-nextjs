@@ -21,6 +21,7 @@ export default function RootLayout({
           )}
         >
           {children}
+          <div id="modals-root"></div>
         </body>
       </html>
     </StoreProvider>
