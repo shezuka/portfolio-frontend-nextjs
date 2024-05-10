@@ -7,5 +7,6 @@ export type ChildrenOnlyProps = {
 export type ProjectType = {
   name: string;
   description: string;
-  logo_url: string;
+  logoUrl: string;
+  projectUrl: string;
 };

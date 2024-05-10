@@ -1,5 +1,7 @@
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/Functional/ProjectCard";
 import type { Metadata } from "next";
+import React from "react";
+import ContactMeButton from "@/components/Functional/ContactMeButton";
 
 export const metadata: Metadata = {
   title: "Dmytro Horbalynskyi | Portfolio",
@@ -7,6 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const onContactClick = () => {
+    alert(123);
+  };
+
   return (
     <>
       <header className="text-center p-20">
@@ -20,21 +26,23 @@ export default function Home() {
 
       <main>
         {/*Projects Section*/}
-        <div id="projects" className="bg-gray-800 px-20 py-10">
+        <div className="bg-gray-800 px-20 py-10">
           <h2 className="text-3xl text-accent mb-8">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             <ProjectCard
               project={{
-                logo_url: "/temp/site_01.png",
+                logoUrl: "/temp/site_01.png",
                 description: "Project description",
                 name: "Project name",
+                projectUrl: "",
               }}
             />
             <ProjectCard
               project={{
-                logo_url: "/temp/site_02.png",
+                logoUrl: "/temp/site_02.png",
                 description: "Project description",
                 name: "Project name",
+                projectUrl: "https://hairland.ca",
               }}
             />
           </div>
@@ -47,9 +55,7 @@ export default function Home() {
             Feel free to reach out for collaborations or just a friendly hello
             👋
           </p>
-          <button className="mt-4 px-6 py-2 bg-primary text-white rounded-full">
-            Contact Me
-          </button>
+          <ContactMeButton />
         </div>
       </main>
     </>
