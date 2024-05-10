@@ -13,7 +13,30 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        background: "#121212", // Dark gray almost black
+        primary: "#1e40af", // A vibrant blue
+        secondary: "#4b5563", // A cool, dark gray
+        accent: "#60a5fa", // An electric blue
+        text: "#e5e7eb", // A light gray for text
+      },
     },
+    customForms: (theme: any) => ({
+      default: {
+        input: {
+          "&:focus": {
+            boxShadow: undefined,
+            borderColor: theme("colors.primary"),
+          },
+        },
+        checkbox: {
+          "&:focus": {
+            boxShadow: undefined,
+            borderColor: theme("colors.primary"),
+          },
+        },
+      },
+    }),
   },
   plugins: [],
 };
