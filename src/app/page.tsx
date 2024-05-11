@@ -1,12 +1,8 @@
 import ProjectCard from "@/components/Functional/ProjectCard";
-import type { Metadata } from "next";
 import React from "react";
 import ContactMeButton from "@/components/Functional/ContactMeButton";
-
-export const metadata: Metadata = {
-  title: "Dmytro Horbalynskyi | Portfolio",
-  description: "Senior Full-Stack Developer & React Expert",
-};
+import Section from "@/components/Elements/Section";
+import AboutMe from "@/components/Functional/AboutMe";
 
 export default function Home() {
   return (
@@ -21,9 +17,18 @@ export default function Home() {
       </header>
 
       <main>
+        {/*About Me section*/}
+        <Section id="about" additionalClassName="bg-gray-800 text-white">
+          <h2 className="text-3xl font-bold mb-3">About Me</h2>
+          <AboutMe />
+        </Section>
+
         {/*Projects Section*/}
-        <div className="bg-gray-800 px-20 py-10">
-          <h2 className="text-3xl text-accent mb-8">Featured Projects</h2>
+        <Section
+          id="featured-projects"
+          additionalClassName="bg-gray-800 text-white"
+        >
+          <h2 className="text-3xl text-accent mb-3">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             <ProjectCard
               project={{
@@ -42,17 +47,19 @@ export default function Home() {
               }}
             />
           </div>
-        </div>
+        </Section>
 
         {/*Contact Section*/}
-        <div className="text-center p-20">
-          <h2 className="text-3xl text-primary mb-3">Get In Touch</h2>
-          <p className="text-lg text-secondary">
-            Feel free to reach out for collaborations or just a friendly hello
-            👋
-          </p>
-          <ContactMeButton />
-        </div>
+        <Section id="contact-me">
+          <div className="text-center">
+            <h2 className="text-3xl text-primary mb-3">Get In Touch</h2>
+            <p className="text-lg text-secondary">
+              Feel free to reach out for collaborations or just a friendly hello
+              👋
+            </p>
+            <ContactMeButton />
+          </div>
+        </Section>
       </main>
     </>
   );
