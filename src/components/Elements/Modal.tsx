@@ -11,7 +11,6 @@ type ModalProps = {
 
 export default function Modal(props: ModalProps) {
   const portalRoot = document.getElementById("modals-root");
-
   if (!portalRoot) return null;
 
   return ReactDOM.createPortal(
