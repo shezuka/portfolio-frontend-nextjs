@@ -25,7 +25,7 @@ type CardProps = {
 
 const Card = (props: CardProps) => {
   const imageRef = useRef<HTMLImageElement>(null);
-  const [imageLoading, setImageLoading] = useState(true);
+  const [imageLoading, setImageLoading] = useState(false);
 
   useEffect(() => {
     if (!imageRef.current) {
@@ -36,6 +36,7 @@ const Card = (props: CardProps) => {
     if (imageRef.current.complete) {
       setImageLoading(false);
     } else {
+      setImageLoading(true);
       imageRef.current.onload = () => {
         setImageLoading(false);
       };
