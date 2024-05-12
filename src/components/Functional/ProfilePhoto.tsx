@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 const ProfilePhoto = () => {
   const imageRef = useRef<HTMLImageElement | null>(null);
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(true);
 
   useEffect(() => {
     if (!imageRef.current) {
@@ -17,6 +17,7 @@ const ProfilePhoto = () => {
     if (imageRef.current.complete) {
       setLoaded(true);
     } else {
+      setLoaded(false);
       imageRef.current.onload = () => {
         setLoaded(true);
       };
