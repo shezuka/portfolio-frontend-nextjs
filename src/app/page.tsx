@@ -6,6 +6,7 @@ import { BuildSkills } from "@/data/Skills";
 import SocialMediaButton from "@/components/Elements/SocialMediaButton";
 import TechnologyStackWithFilter from "@/components/Functional/TechnologyStackWithFilter";
 import ProfilePhoto from "@/components/Functional/ProfilePhoto";
+import { faLinkedinIn, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 const Home = () => {
   return (
@@ -16,7 +17,7 @@ const Home = () => {
           <div className="inline-block m-2 mt-0">
             <SocialMediaButton
               href="https://www.linkedin.com/in/dmytro-horbalynskyi-306b45134/"
-              iconClass="fab fa-linkedin"
+              icon={faLinkedinIn}
               bgColor="blue-600"
               hoverBgColor="blue-800"
             >
@@ -26,7 +27,7 @@ const Home = () => {
           <div className="inline-block m-2 mb-0">
             <SocialMediaButton
               href="https://www.facebook.com/profile.php?id=61551777862375"
-              iconClass="fab fa-facebook"
+              icon={faFacebook}
               bgColor="blue-600"
               hoverBgColor="blue-800"
             >
