@@ -17,6 +17,18 @@ const defaultDescription =
 export const metadata: Metadata = {
   title: defaultTitle,
   description: defaultDescription,
+  keywords: [
+    "Dmytro",
+    "Horbalynskyi",
+    "Dmytro Horbalynskyi",
+    "project",
+    "projects",
+    "Software",
+    "experience",
+    "frontend",
+    "Engineering",
+    "Impactful",
+  ],
   openGraph: {
     type: "website",
     title: defaultTitle,
@@ -35,30 +47,6 @@ export const metadata: Metadata = {
       url: process.env.WEBSITE_URL + "/favicon.ico",
       rel: "shortcut icon",
       href: process.env.WEBSITE_URL + "/favicon.ico",
-    },
-    {
-      url: process.env.WEBSITE_URL + "/favicon-16x16.ico",
-      href: process.env.WEBSITE_URL + "/favicon-16x16.ico",
-      type: "image/x-icon",
-      sizes: "16x16",
-    },
-    {
-      url: process.env.WEBSITE_URL + "/favicon-24x24.ico",
-      href: process.env.WEBSITE_URL + "/favicon-24x24.ico",
-      type: "image/x-icon",
-      sizes: "24x24",
-    },
-    {
-      url: process.env.WEBSITE_URL + "/favicon-32x32.ico",
-      href: process.env.WEBSITE_URL + "/favicon-32x32.ico",
-      type: "image/x-icon",
-      sizes: "32x32",
-    },
-    {
-      url: process.env.WEBSITE_URL + "/favicon-64x64.ico",
-      href: process.env.WEBSITE_URL + "/favicon-64x64.ico",
-      type: "image/x-icon",
-      sizes: "64x64",
     },
     {
       url: process.env.WEBSITE_URL + "/apple-touch-icon.png",
