@@ -1,0 +1,32 @@
+{
+  "short_name": "DHorbalynskyi",
+  "name": "Dmytro Horbalynskyi's Portfolio",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/icon-256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+        "src": "/icons/icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#333333",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#333333",
+  "description": "Explore Dmytro Horbalynskyi's professional portfolio featuring projects, skills, and contact information."
+}
