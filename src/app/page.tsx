@@ -2,21 +2,23 @@ import ProjectCard from "@/components/Functional/ProjectCard";
 import ContactMeButton from "@/components/Functional/ContactMeButton";
 import Section from "@/components/Elements/Section";
 import AboutMe from "@/components/Functional/AboutMe";
-import TechnologyStack from "@/components/Functional/TechnologyStack";
 import { BuildSkills } from "@/data/Skills";
 import SocialMediaButton from "@/components/Elements/SocialMediaButton";
+import TechnologyStackWithFilter from "@/components/Functional/TechnologyStackWithFilter";
+import Image from "next/image";
 
 const Home = () => {
   return (
     <>
-      <header className="text-center p-20">
-        <h1 className="text-center text-4xl font-bold text-white mb-2">
-          Engineering Impactful Software Experiences
-        </h1>
-        <p className="text-xl text-secondary">
-          Dmytro Horbalynskyi | Senior Full-Stack Developer & React Expert
-        </p>
-        <div className="mt-4">
+      <header className="flex flex-col justify-center items-center text-center p-5 md:p-10 lg:p-15 xl:p-20">
+        <Image
+          className="rounded-full"
+          src={"/profile.jpg"}
+          width={200}
+          height={200}
+          alt={"Profile image"}
+        />
+        <div className="my-2">
           <div className="inline-block m-2 mt-0">
             <SocialMediaButton
               href="https://www.linkedin.com/in/dmytro-horbalynskyi-306b45134/"
@@ -38,6 +40,12 @@ const Home = () => {
             </SocialMediaButton>
           </div>
         </div>
+        <h1 className="text-center text-4xl font-bold text-white mb-2">
+          Engineering Impactful Software Experiences
+        </h1>
+        <p className="text-xl text-secondary">
+          Dmytro Horbalynskyi | Senior Full-Stack Developer & React Expert
+        </p>
       </header>
 
       <main className="bg-gray-800 text-white">
@@ -58,7 +66,7 @@ const Home = () => {
             <div className="inline-block w-3 h-3 bg-gray-300 rounded-xl"></div>{" "}
             - I had little work experience, was self-learn or familiar skills
           </div>
-          <TechnologyStack skills={BuildSkills()} />
+          <TechnologyStackWithFilter skills={BuildSkills()} />
         </Section>
 
         {/*Projects Section*/}

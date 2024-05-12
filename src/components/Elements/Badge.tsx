@@ -2,16 +2,33 @@ import { ReactNode } from "react";
 
 type BadgeProps = {
   children: ReactNode;
-  style?: "primary" | "secondary";
+  style?: "primary" | "secondary" | "green" | "red";
+  opacity?: number;
 };
 
-const Badge = ({ children, style }: BadgeProps) => {
-  const className =
-    !!style && style === "secondary"
-      ? "inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-      : "inline-block bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2";
+const Badge = ({ children, style, opacity }: BadgeProps) => {
+  const className = [
+    "inline-block px-3 py-1 text-sm font-semibold rounded-full transition-opacity duration-200",
+  ];
 
-  return <span className={className}>{children}</span>;
+  if (style === "secondary") {
+    className.push("bg-gray-300 text-gray-700");
+  } else if (style === "green") {
+    className.push("bg-green-600 text-gray-100");
+  } else if (style === "red") {
+    className.push("bg-red-600 text-gray-200");
+  } else {
+    // primary by default
+    className.push("bg-blue-500 text-gray-200");
+  }
+
+  if (typeof opacity === "number") {
+    className.push(`opacity-${opacity}`);
+  } else {
+    className.push("opacity-100");
+  }
+
+  return <span className={className.join(" ")}>{children}</span>;
 };
 
 export default Badge;
