@@ -1,9 +1,12 @@
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 import "./globals.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import StoreProvider from "@/store/StoreProvider";
 import { ReactNode } from "react";
+
+config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -80,7 +83,6 @@ const RootLayout = ({
     // <StoreProvider>
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="/css/fontawesome-all.min.css" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#333333" />
       </head>
