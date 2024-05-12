@@ -70,7 +70,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             <ProjectCard
               project={{
-                logoUrl: "/temp/site_01.png",
+                logoUrl: "/site_01.png",
                 description: "Project description",
                 name: "Project name",
                 projectUrl: "",
@@ -78,7 +78,7 @@ const Home = () => {
             />
             <ProjectCard
               project={{
-                logoUrl: "/temp/site_02.png",
+                logoUrl: "/site_02.png",
                 description: "Project description",
                 name: "Project name",
                 projectUrl: "https://hairland.ca",
