@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     title: defaultTitle,
     description: defaultDescription,
     creator: "@dihordev",
+    site: process.env.WEBSITE_URL,
+    images: [
+      "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site-image.png",
+    ],
   },
   icons: [
     {
