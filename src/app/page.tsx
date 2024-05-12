@@ -5,14 +5,21 @@ import AboutMe from "@/components/Functional/AboutMe";
 import { BuildSkills } from "@/data/Skills";
 import SocialMediaButton from "@/components/Elements/SocialMediaButton";
 import TechnologyStackWithFilter from "@/components/Functional/TechnologyStackWithFilter";
-import ProfilePhoto from "@/components/Functional/ProfilePhoto";
-import { faLinkedinIn, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import ImageLoader from "@/components/Functional/ImageLoader";
 
 const Home = () => {
   return (
     <>
       <header className="header-gradient flex flex-col justify-center items-center text-center p-5 md:p-10 lg:p-15 xl:p-20">
-        <ProfilePhoto />
+        <ImageLoader loaderWrapperClassName="rounded-full">
+          <img
+            className="rounded-full w-60 h-auto"
+            src={"/profile.jpg"}
+            alt={"Profile image"}
+          />
+        </ImageLoader>
+        {/*<ProfilePhoto />*/}
         <div className="my-2">
           <div className="inline-block m-2 mt-0">
             <SocialMediaButton

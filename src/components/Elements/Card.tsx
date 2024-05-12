@@ -7,8 +7,8 @@ import {
   useRef,
   useState,
 } from "react";
-import Image from "next/image";
 import Spinner from "@/components/Elements/Spinner";
+import ImageLoader from "@/components/Functional/ImageLoader";
 
 type CardLogo = {
   url: string;
@@ -53,12 +53,17 @@ const Card = (props: CardProps) => {
           className="relative w-full overflow-hidden"
           style={{ height: "140px" }}
         >
-          <img
-            ref={imageRef}
-            src={props.logo.url}
-            alt={props.logo.alt}
-            className={`w-full h-full object-cover object-center rounded-tl-lg rounded-tr-lg`}
-          />
+          <ImageLoader
+            containerClassName="w-full h-full"
+            loaderWrapperClassName="rounded-tl-lg rounded-tr-lg"
+          >
+            <img
+              ref={imageRef}
+              src={props.logo.url}
+              alt={props.logo.alt}
+              className={`w-full h-auto object-cover object-center rounded-tl-lg rounded-tr-lg`}
+            />
+          </ImageLoader>
           <div
             className={`flex justify-center items-center absolute top-0 left-0 right-0 bottom-0 rounded-tl-lg rounded-tr-lg bg-gray-200 pointer-events-none transition-opacity duration-300 ${imageLoading ? "opacity-1" : "opacity-0"}`}
           >
