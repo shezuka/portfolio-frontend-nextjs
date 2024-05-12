@@ -26,14 +26,11 @@ const ProfilePhoto = () => {
 
   return (
     <div className="relative rounded-full">
-      <Image
+      <img
         ref={imageRef}
         className="rounded-full"
         src={"/profile.jpg"}
-        width={200}
-        height={200}
         alt={"Profile image"}
-        priority
       />
       <div
         className={`bg-gray-500 rounded-full absolute top-0 bottom-0 right-0 left-0 flex justify-center items-center transition-opacity duration-200 ${loaded ? "opacity-0" : "opacity-100"}`}

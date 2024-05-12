@@ -53,10 +53,8 @@ const Card = (props: CardProps) => {
           className="relative w-full overflow-hidden"
           style={{ height: "140px" }}
         >
-          <Image
+          <img
             ref={imageRef}
-            width={props.logo.width}
-            height={props.logo.height}
             src={props.logo.url}
             alt={props.logo.alt}
             className={`w-full h-full object-cover object-center rounded-tl-lg rounded-tr-lg`}
