@@ -6,7 +6,7 @@ function Paragraph({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function AboutMe() {
+const AboutMe = () => {
   return (
     <>
       <Paragraph>
@@ -58,4 +58,6 @@ export default function AboutMe() {
       </Paragraph>
     </>
   );
-}
+};
+
+export default AboutMe;

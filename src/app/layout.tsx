@@ -1,10 +1,9 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import Head from "next/head";
 import { Inter } from "next/font/google";
-import React from "react";
 import StoreProvider from "@/store/StoreProvider";
+import { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +19,8 @@ export const metadata: Metadata = {
     title: defaultTitle,
     siteName: defaultTitle,
     description: defaultDescription,
-    url: process.env.WEBSITE_URL, // TODO with environment variables. Should be full url
-    // images: [], TODO
+    url: process.env.WEBSITE_URL,
+    images: [process.env.WEBSITE_URL + "/site-image.png"],
   },
   twitter: {
     title: defaultTitle,
@@ -72,18 +71,22 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+  children: ReactNode;
+}>) => {
   return (
     <StoreProvider>
       <html lang="en">
-        <Head>
+        <head>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#333333" />
-        </Head>
+        </head>
         <body
           className={[inter.className, "min-h-screen", "bg-background"].join(
             " ",
@@ -95,4 +98,6 @@ export default function RootLayout({
       </html>
     </StoreProvider>
   );
-}
+};
+
+export default RootLayout;

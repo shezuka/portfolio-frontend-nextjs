@@ -9,9 +9,9 @@ type ProjectCardProps = {
   onClick?: MouseEventHandler<HTMLDivElement>;
 };
 
-export default function ProjectCard({
+const ProjectCard = ({
   project: { name, description, logoUrl, projectUrl },
-}: ProjectCardProps) {
+}: ProjectCardProps) => {
   function onCardClick() {
     window.open(projectUrl, "_blank");
   }
@@ -25,4 +25,6 @@ export default function ProjectCard({
       <p className="text-md text-gray-300">{description}</p>
     </Card>
   );
-}
+};
+
+export default ProjectCard;

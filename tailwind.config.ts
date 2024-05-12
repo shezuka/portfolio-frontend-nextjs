@@ -20,6 +20,9 @@ const config: Config = {
         accent: "#60a5fa", // An electric blue
         text: "#e5e7eb", // A light gray for text
       },
+      animation: {
+        spin: "spin 1s linear infinite",
+      },
     },
     customForms: (theme: any) => ({
       default: {

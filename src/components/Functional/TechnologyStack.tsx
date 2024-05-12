@@ -5,7 +5,7 @@ type TechnologyStackProps = {
   skills: { [key: string]: Skill[] };
 };
 
-export default function TechnologyStack({ skills }: TechnologyStackProps) {
+const TechnologyStack = ({ skills }: TechnologyStackProps) => {
   return Object.keys(skills).map((category) => (
     <div key={category}>
       <h3 className="font-bold text-lg">
@@ -20,4 +20,6 @@ export default function TechnologyStack({ skills }: TechnologyStackProps) {
       </div>
     </div>
   ));
-}
+};
+
+export default TechnologyStack;

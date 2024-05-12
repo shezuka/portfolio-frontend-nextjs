@@ -2,31 +2,31 @@
 
 import Modal from "@/components/Elements/Modal";
 import ContactMeForm from "@/components/Forms/ContactMeForm";
-import React from "react";
+import { FormEvent, useState } from "react";
+import Button from "@/components/Elements/Button";
 
-export default function ContactMeButton() {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+const ContactMeButton = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onClick = () => {
     setIsModalOpen(true);
   };
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
   return (
     <>
-      <button
-        className="mt-4 px-6 py-2 bg-primary text-white rounded-full"
-        onClick={onClick}
-      >
+      <Button rounded onClick={onClick}>
         Contact Me
-      </button>
+      </Button>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ContactMeForm onSubmit={onSubmit} />
       </Modal>
     </>
   );
-}
+};
+
+export default ContactMeButton;

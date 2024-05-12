@@ -28,7 +28,7 @@ export function GetTopSkills(): { [k: string | symbol]: string[] } {
     ],
     "Backend Services": ["Nginx", "Redis", "RabbitMQ", "Celery"],
     Network: ["UDP", "TCP", "HTTP", "HTTPS", "WebSockets"],
-    Databases: ["PostgreSQL"],
+    Databases: ["SQL", "PostgreSQL"],
     DevOps: ["Docker", "Nginx"],
     Cloud: ["AWS"],
     "Version Control and Testing": [
@@ -65,7 +65,7 @@ export function GetAllSkills(): { [k: string | symbol]: string[] } {
       "Django",
       "Nginx Lua",
       "Symphony",
-      "C# .NET",
+      "C#",
     ],
     DevOps: ["Jenkins"],
     Databases: ["SQL Server", "MySQL", "MongoDB"],

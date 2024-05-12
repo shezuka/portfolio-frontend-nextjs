@@ -1,12 +1,12 @@
-import React from "react";
+import { ReactNode } from "react";
 
 type SectionProps = {
   id: string;
-  children: React.ReactNode;
+  children: ReactNode;
   additionalClassName?: string;
 };
 
-export default function Section(props: SectionProps) {
+const Section = (props: SectionProps) => {
   return (
     <section
       id={props.id}
@@ -15,4 +15,6 @@ export default function Section(props: SectionProps) {
       {props.children}
     </section>
   );
-}
+};
+
+export default Section;

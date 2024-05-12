@@ -1,10 +1,11 @@
 import { FormEventHandler } from "react";
+import Button from "@/components/Elements/Button";
 
 type ContactMeFormProps = {
   onSubmit: FormEventHandler<HTMLFormElement>;
 };
 
-export default function ContactMeForm(props: ContactMeFormProps) {
+const ContactMeForm = (props: ContactMeFormProps) => {
   return (
     <form onSubmit={props.onSubmit} className="space-y-4">
       <div>
@@ -54,13 +55,10 @@ export default function ContactMeForm(props: ContactMeFormProps) {
         ></textarea>
       </div>
       <div>
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Send Message
-        </button>
+        <Button submit>Send Message</Button>
       </div>
     </form>
   );
-}
+};
+
+export default ContactMeForm;

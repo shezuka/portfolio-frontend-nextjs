@@ -1,5 +1,14 @@
-import React, { MouseEventHandler } from "react";
+"use client";
+
+import {
+  MouseEventHandler,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Image from "next/image";
+import Spinner from "@/components/Elements/Spinner";
 
 type CardLogo = {
   url: string;
@@ -9,29 +18,53 @@ type CardLogo = {
 };
 
 type CardProps = {
-  children?: React.ReactNode;
+  children?: ReactNode;
   onClick?: MouseEventHandler<HTMLDivElement>;
   logo?: CardLogo;
 };
 
-export default function Card(props: CardProps) {
+const Card = (props: CardProps) => {
+  const imageRef = useRef<HTMLImageElement>(null);
+  const [imageLoading, setImageLoading] = useState(true);
+
+  useEffect(() => {
+    if (!imageRef.current) {
+      setImageLoading(false);
+      return;
+    }
+    imageRef.current.onload = () => {
+      setImageLoading(false);
+    };
+  }, [props.logo]);
+
   return (
     <div
       className="bg-secondary rounded-lg shadow-lg cursor-pointer hover:bg-primary hover:shadow-xl transition duration-300 select-none"
       onClick={props.onClick}
     >
       {props.logo ? (
-        <div className="w-full overflow-hidden" style={{ height: "140px" }}>
+        <div
+          className="relative w-full overflow-hidden"
+          style={{ height: "140px" }}
+        >
           <Image
+            ref={imageRef}
             width={props.logo.width}
             height={props.logo.height}
             src={props.logo.url}
             alt={props.logo.alt}
-            className="w-full h-full object-cover object-center rounded-tl-lg rounded-tr-lg"
+            className={`w-full h-full object-cover object-center rounded-tl-lg rounded-tr-lg`}
           />
+          <div
+            className={`flex justify-center items-center absolute top-0 left-0 right-0 bottom-0 rounded-tl-lg rounded-tr-lg bg-gray-200 pointer-events-none transition-opacity duration-300 ${imageLoading ? "opacity-1" : "opacity-0"}`}
+          >
+            <Spinner />
+          </div>
         </div>
       ) : null}
       <div className="p-4">{props.children}</div>
     </div>
   );
-}
+};
+
+export default Card;
