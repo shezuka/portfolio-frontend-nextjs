@@ -25,9 +25,13 @@ export const metadata: Metadata = {
     "projects",
     "Software",
     "experience",
+    "experienced",
     "frontend",
+    "backend",
     "Engineering",
     "Impactful",
+    "development",
+    "website",
   ],
   openGraph: {
     type: "website",
