@@ -35,7 +35,9 @@ export const metadata: Metadata = {
     siteName: defaultTitle,
     description: defaultDescription,
     url: process.env.WEBSITE_URL,
-    images: [process.env.WEBSITE_URL + "/site-image.png"],
+    images: [
+      "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site-image.png",
+    ],
   },
   twitter: {
     title: defaultTitle,

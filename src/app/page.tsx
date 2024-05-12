@@ -70,7 +70,8 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             <ProjectCard
               project={{
-                logoUrl: "/site_01.png",
+                logoUrl:
+                  "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site_01.png",
                 description: "Project description",
                 name: "Project name",
                 projectUrl: "",
@@ -78,7 +79,8 @@ const Home = () => {
             />
             <ProjectCard
               project={{
-                logoUrl: "/site_02.png",
+                logoUrl:
+                  "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site_02.png",
                 description: "Project description",
                 name: "Project name",
                 projectUrl: "https://hairland.ca",
