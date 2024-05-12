@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: defaultDescription,
     url: process.env.WEBSITE_URL,
     images: [
-      "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site-image.png",
+      "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site-image.jpg",
     ],
   },
   twitter: {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     creator: "@dihordev",
     site: process.env.WEBSITE_URL,
     images: [
-      "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site-image.png",
+      "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site-image.jpg",
     ],
   },
   icons: [
