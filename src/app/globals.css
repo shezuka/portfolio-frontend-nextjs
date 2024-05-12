@@ -3,3 +3,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import "animations.css";
+
+.header-gradient {
+    background: radial-gradient(circle at 20% 50%, #004d40 20%, transparent 50%), /* Deep green */ radial-gradient(circle at 80% 50%, #006064 20%, transparent 50%), /* Dark cyan */ radial-gradient(circle at 50% 10%, #880e4f 20%, transparent 50%), /* Deep magenta */ radial-gradient(circle at 50% 90%, #ff6f00 20%, transparent 50%); /* Amber */
+    background-size: cover; /* Ensures full coverage within the header */
+    animation: gradient1 15s infinite linear alternate,
+    gradient2 18s infinite linear alternate,
+    gradient3 20s infinite linear alternate,
+    gradient4 22s infinite linear alternate;
+}

@@ -5,19 +5,13 @@ import AboutMe from "@/components/Functional/AboutMe";
 import { BuildSkills } from "@/data/Skills";
 import SocialMediaButton from "@/components/Elements/SocialMediaButton";
 import TechnologyStackWithFilter from "@/components/Functional/TechnologyStackWithFilter";
-import Image from "next/image";
+import ProfilePhoto from "@/components/Functional/ProfilePhoto";
 
 const Home = () => {
   return (
     <>
-      <header className="flex flex-col justify-center items-center text-center p-5 md:p-10 lg:p-15 xl:p-20">
-        <Image
-          className="rounded-full"
-          src={"/profile.jpg"}
-          width={200}
-          height={200}
-          alt={"Profile image"}
-        />
+      <header className="header-gradient flex flex-col justify-center items-center text-center p-5 md:p-10 lg:p-15 xl:p-20">
+        <ProfilePhoto />
         <div className="my-2">
           <div className="inline-block m-2 mt-0">
             <SocialMediaButton
@@ -43,7 +37,7 @@ const Home = () => {
         <h1 className="text-center text-4xl font-bold text-white mb-2">
           Engineering Impactful Software Experiences
         </h1>
-        <p className="text-xl text-secondary">
+        <p className="text-xl text-gray-400">
           Dmytro Horbalynskyi | Senior Full-Stack Developer & React Expert
         </p>
       </header>

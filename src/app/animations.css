@@ -6,3 +6,47 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes gradient1 {
+    0%, 100% {
+        background-position: 30% 20%;
+        background-size: 300% 300%;
+    }
+    50% {
+        background-position: 50% 50%;
+        background-size: 150% 150%;
+    }
+}
+
+@keyframes gradient2 {
+    0%, 100% {
+        background-position: 70% 40%;
+        background-size: 200% 200%;
+    }
+    50% {
+        background-position: 30% 60%;
+        background-size: 250% 250%;
+    }
+}
+
+@keyframes gradient3 {
+    0%, 100% {
+        background-position: 20% 80%;
+        background-size: 220% 220%;
+    }
+    50% {
+        background-position: 80% 30%;
+        background-size: 180% 180%;
+    }
+}
+
+@keyframes gradient4 {
+    0%, 100% {
+        background-position: 80% 10%;
+        background-size: 280% 280%;
+    }
+    50% {
+        background-position: 20% 90%;
+        background-size: 200% 200%;
+    }
+}
