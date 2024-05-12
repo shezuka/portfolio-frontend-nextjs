@@ -32,9 +32,14 @@ const Card = (props: CardProps) => {
       setImageLoading(false);
       return;
     }
-    imageRef.current.onload = () => {
+
+    if (imageRef.current.complete) {
+      imageRef.current.onload = () => {
+        setImageLoading(false);
+      };
+    } else {
       setImageLoading(false);
-    };
+    }
   }, [props.logo]);
 
   return (

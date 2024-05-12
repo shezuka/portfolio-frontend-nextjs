@@ -12,3 +12,7 @@
     gradient3 20s infinite linear alternate,
     gradient4 22s infinite linear alternate;
 }
+
+.opacity-20 {
+    opacity: 0.2;
+}

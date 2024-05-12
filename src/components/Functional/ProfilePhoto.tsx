@@ -14,7 +14,13 @@ const ProfilePhoto = () => {
       return;
     }
 
-    imageRef.current.onload = () => setLoaded(true);
+    if (imageRef.current.complete) {
+      setLoaded(true);
+    } else {
+      imageRef.current.onload = () => {
+        setLoaded(true);
+      };
+    }
   }, []);
 
   return (
@@ -28,7 +34,7 @@ const ProfilePhoto = () => {
         alt={"Profile image"}
       />
       <div
-        className={`bg-gray-500 rounded-full absolute top-0 bottom-0 right-0 left-0 flex justify-center items-center transition-opacity ${loaded ? "opacity-100" : "opacity-0"}`}
+        className={`bg-gray-500 rounded-full absolute top-0 bottom-0 right-0 left-0 flex justify-center items-center transition-opacity ${loaded ? "opacity-0" : "opacity-100"}`}
       >
         <Spinner />
       </div>
