@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const defaultTitle = "Dmytro Horbalynskyi | Portfolio";
 const defaultDescription =
-  "Discover the innovative world of Dmytro Horbalynskyi, a seasoned Full-Stack Developer specializing in React and modern web technologies. Explore projects that blend cutting-edge solutions with creative design to solve complex challenges. Dive into a portfolio where functionality meets creativity.";
+  "Explore the world of Dmyto Horbalynskyi, a seasoned Full-Stack Developer skilled in React and modern web tech. Discover projects where innovation meets design.";
 
 export const metadata: Metadata = {
   title: defaultTitle,
