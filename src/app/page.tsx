@@ -71,7 +71,7 @@ const Home = () => {
             <ProjectCard
               project={{
                 logoUrl:
-                  "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site_01.png",
+                  "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site_01.jpg",
                 description: "Project description",
                 name: "Project name",
                 projectUrl: "",
@@ -80,7 +80,7 @@ const Home = () => {
             <ProjectCard
               project={{
                 logoUrl:
-                  "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site_02.png",
+                  "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site_02.jpg",
                 description: "Project description",
                 name: "Project name",
                 projectUrl: "https://hairland.ca",
