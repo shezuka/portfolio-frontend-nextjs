@@ -9,7 +9,7 @@ type ButtonProps = {
 
 const Button = ({ children, rounded, submit, onClick }: ButtonProps) => {
   const className = [
-    "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4",
+    "transition duration-200 bg-blue-600 hover:bg-blue-800 text-gray-100 font-bold py-2 px-4",
   ];
   const type = submit === true ? "submit" : "button";
 

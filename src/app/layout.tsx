@@ -80,10 +80,7 @@ const RootLayout = ({
     // <StoreProvider>
     <html lang="en">
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        />
+        <link rel="stylesheet" href="/css/fontawesome-all.min.css" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#333333" />
       </head>

@@ -19,7 +19,7 @@ const Badge = ({ children, style, opacity }: BadgeProps) => {
     className.push("bg-red-600 text-gray-200");
   } else {
     // primary by default
-    className.push("bg-blue-500 text-gray-200");
+    className.push("bg-blue-600 text-gray-100");
   }
 
   if (typeof opacity === "number") {

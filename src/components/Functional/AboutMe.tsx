@@ -49,7 +49,7 @@ const AboutMe = () => {
         <a
           target="_blank"
           href="https://www.linkedin.com/in/dmytro-horbalynskyi-306b45134/"
-          className="text-blue-400 hover:text-blue-600 transition duration-300 ease-in-out"
+          className="font-bold text-blue-400 hover:text-blue-600 transition duration-300 ease-in-out"
         >
           LinkedIn
         </a>{" "}
