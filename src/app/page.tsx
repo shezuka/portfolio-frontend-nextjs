@@ -2,11 +2,12 @@ import ProjectCard from "@/components/Functional/ProjectCard";
 import ContactMeButton from "@/components/Functional/ContactMeButton";
 import Section from "@/components/Elements/Section";
 import AboutMe from "@/components/Functional/AboutMe";
-import { BuildSkills } from "@/data/Skills";
+import { GetSkills } from "@/data/Skills";
 import SocialMediaButton from "@/components/Elements/SocialMediaButton";
 import TechnologyStackWithFilter from "@/components/Functional/TechnologyStackWithFilter";
 import { faFacebook, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import ImageLoader from "@/components/Functional/ImageLoader";
+import Projects from "@/components/Functional/Projects";
 
 const Home = () => {
   return (
@@ -57,6 +58,14 @@ const Home = () => {
           <AboutMe />
         </Section>
 
+        {/*Projects Section*/}
+        <Section id="projects">
+          <h2 className="text-3xl text-accent mb-3">Projects Overview</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <Projects />
+          </div>
+        </Section>
+
         {/*Technologies stack*/}
         <Section id={"technologies"}>
           <h2 className="text-3xl font-bold mb-4">Skills</h2>
@@ -68,32 +77,7 @@ const Home = () => {
             <div className="inline-block w-3 h-3 bg-gray-300 rounded-xl"></div>{" "}
             - I had little work experience, was self-learn or familiar skills
           </div>
-          <TechnologyStackWithFilter skills={BuildSkills()} />
-        </Section>
-
-        {/*Projects Section*/}
-        <Section id="featured-projects">
-          <h2 className="text-3xl text-accent mb-3">Featured Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            <ProjectCard
-              project={{
-                logoUrl:
-                  "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site_01.jpg",
-                description: "Project description",
-                name: "Project name",
-                projectUrl: "",
-              }}
-            />
-            <ProjectCard
-              project={{
-                logoUrl:
-                  "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site_02.jpg",
-                description: "Project description",
-                name: "Project name",
-                projectUrl: "https://hairland.ca",
-              }}
-            />
-          </div>
+          <TechnologyStackWithFilter />
         </Section>
       </main>
 

@@ -1,33 +1,36 @@
 import Badge from "@/components/Elements/Badge";
-import { Skill } from "@/data/Skills";
+import { Category } from "@/types";
 
 type TechnologyStackProps = {
-  skills: { [key: string]: Skill[] };
+  categories: Category[];
   highlightSkills?: string[];
 };
 
-const TechnologyStack = ({ skills, highlightSkills }: TechnologyStackProps) => {
-  return Object.keys(skills).map((category) => (
-    <div key={category}>
+const TechnologyStack = ({
+  categories,
+  highlightSkills,
+}: TechnologyStackProps) => {
+  return categories.map((category) => (
+    <div key={category.id}>
       <h3 className="font-bold text-lg">
-        {category.charAt(0).toUpperCase() + category.slice(1)}
+        {category.title.charAt(0).toUpperCase() + category.title.slice(1)}
       </h3>
       <div className="flex flex-wrap">
-        {skills[category].map((skill) => (
-          <span key={skill.name} className="px-1 py-1 first:pl-0 last:pr-0">
+        {category.skills.map((skill) => (
+          <span key={skill.title} className="px-1 py-1 first:pl-0 last:pr-0">
             <Badge
-              style={skill.top ? "primary" : "secondary"}
+              style={skill.is_top ? "primary" : "secondary"}
               opacity={
                 !highlightSkills ||
                 !highlightSkills.length ||
                 !!highlightSkills.find((it) =>
-                  skill.name.toLowerCase().includes(it.toLowerCase()),
+                  skill.title.toLowerCase().includes(it.toLowerCase()),
                 )
                   ? 100
                   : 20
               }
             >
-              {skill.name}
+              {skill.title}
             </Badge>
           </span>
         ))}
