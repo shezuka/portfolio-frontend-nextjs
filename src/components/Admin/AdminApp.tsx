@@ -17,6 +17,10 @@ import ProjectList from "@/components/Admin/Project/ProjectList";
 import ProjectCreate from "@/components/Admin/Project/ProjectCreate";
 import ProjectEdit from "@/components/Admin/Project/ProjectEdit";
 import ProjectShow from "@/components/Admin/Project/ProjectShow";
+import ImageCreate from "@/components/Admin/Image/ImageCreate";
+import MessageList from "@/components/Admin/Message/MessageList";
+import MessageShow from "@/components/Admin/Message/MessageShow";
+import getRecaptchaToken from "@/lib/getRecaptchaToken";
 
 const decodeToken = () => {
   const token = localStorage.getItem("token");
@@ -41,6 +45,7 @@ const decodeToken = () => {
 
 const authProvider: AuthProvider = {
   login: async (data) => {
+    data.captcha_token = await getRecaptchaToken("login_admin");
     const response = await axios.post("/auth/login", data);
     const token = response.data.access_token;
     localStorage.setItem("token", token);
@@ -113,6 +118,7 @@ const dataProvider = simpleRestDataProvider(`/api/admin`, httpClient);
 const AdminApp = () => {
   return (
     <Admin authProvider={authProvider} dataProvider={dataProvider}>
+      <Resource name="messages" list={MessageList} show={MessageShow} />
       <Resource
         name="projects"
         list={ProjectList}
@@ -135,7 +141,7 @@ const AdminApp = () => {
         show={SkillCategoryShow}
         edit={SkillCategoryEdit}
       />
-      <Resource name="images" list={ImageList} />
+      <Resource name="images" list={ImageList} create={ImageCreate} />
     </Admin>
   );
 };

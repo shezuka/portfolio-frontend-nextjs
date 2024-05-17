@@ -5,6 +5,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
+import { headers } from "next/headers";
+import RecaptchaProvider from "@/components/Functional/RecaptchaProvider";
 
 config.autoAddCss = false;
 
@@ -39,18 +41,15 @@ export const metadata: Metadata = {
     siteName: defaultTitle,
     description: defaultDescription,
     url: process.env.WEBSITE_URL,
-    images: [
-      "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site-image.jpg",
-    ],
+    images: [process.env.WEBSITE_URL + "/site-image.jpg"],
   },
   twitter: {
     title: defaultTitle,
     description: defaultDescription,
     creator: "@dihordev",
     site: process.env.WEBSITE_URL,
-    images: [
-      "https://dmytro-horbalynskyi-portfolio.s3.us-east-2.amazonaws.com/site-image.jpg",
-    ],
+    images: [process.env.WEBSITE_URL + "/site-image.jpg"],
+    card: "summary_large_image",
   },
   icons: [
     {
@@ -81,13 +80,15 @@ const RootLayout = ({
     // <StoreProvider>
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#333333" />
+        <link rel="canonical" href={`https://${process.env.WEBSITE_URL}/`} />
       </head>
       <body
         className={[inter.className, "min-h-screen", "bg-background"].join(" ")}
       >
-        {children}
+        <RecaptchaProvider>{children}</RecaptchaProvider>
         <div id="modals-root"></div>
       </body>
     </html>

@@ -1,4 +1,6 @@
-import { FormEventHandler } from "react";
+"use client";
+
+import React, { FormEventHandler } from "react";
 import Button from "@/components/Elements/Button";
 
 type ContactMeFormProps = {
