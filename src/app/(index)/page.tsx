@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <MainPageHeader />
-      <main className="bg-gray-900 text-white">
+      <main className="text-white">
         {/*Projects Section*/}
         <Section id="projects">
           <h2 className="text-3xl text-accent mb-3">Projects Overview</h2>

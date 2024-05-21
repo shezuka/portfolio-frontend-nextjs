@@ -18,7 +18,7 @@ const menuVariants = {
     );
     return {
       clipPath: `circle(${radius}px at 40px 40px)`,
-      background: "rgba(224, 221, 255, 0.6)",
+      background: "rgba(174, 174, 185, 0.6)",
       transition: {
         type: "tween",
         duration: 0.2,
