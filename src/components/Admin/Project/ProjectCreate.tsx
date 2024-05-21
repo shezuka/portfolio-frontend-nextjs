@@ -49,7 +49,12 @@ const ProjectCreate = () => {
       <SimpleForm onSubmit={saveProject}>
         <TextInput required name={"title"} source={"title"} />
         <TextInput required name={"description"} source={"description"} />
-        <TextInput required name={"project_url"} source={"project_url"} />
+        <TextInput name={"project_url"} source={"project_url"} />
+        <TextInput
+          name={"frontend_github_url"}
+          source={"frontend_github_url"}
+        />
+        <TextInput name={"backend_github_url"} source={"backend_github_url"} />
         <ImageInput
           name={"image_id"}
           source={"Image"}

@@ -4,8 +4,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ReactNode } from "react";
-import { headers } from "next/headers";
+import React, { ReactNode } from "react";
 import RecaptchaProvider from "@/components/Functional/RecaptchaProvider";
 
 config.autoAddCss = false;
@@ -77,7 +76,6 @@ const RootLayout = ({
   children: ReactNode;
 }>) => {
   return (
-    // <StoreProvider>
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -92,7 +90,6 @@ const RootLayout = ({
         <div id="modals-root"></div>
       </body>
     </html>
-    // </StoreProvider>
   );
 };
 

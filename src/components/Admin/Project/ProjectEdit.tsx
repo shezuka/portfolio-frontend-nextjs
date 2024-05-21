@@ -13,7 +13,6 @@ import React, { useState } from "react";
 import axios from "@/lib/axios";
 import AdminImagePreview from "@/components/Admin/Components/Elements/AdminImagePreview";
 import { useParams } from "react-router";
-import { id } from "postcss-selector-parser";
 
 const ProjectEdit = () => {
   const { id } = useParams();
@@ -28,7 +27,7 @@ const ProjectEdit = () => {
       const formData = new FormData();
       formData.append("file", image);
       formData.append("mime_type", image.type);
-      const postImageResponse = await axios.put("/admin/images", formData, {
+      const postImageResponse = await axios.post("/admin/images", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -60,7 +59,12 @@ const ProjectEdit = () => {
         </ImageInput>
         <TextInput required name={"title"} source={"title"} />
         <TextInput required name={"description"} source={"description"} />
-        <TextInput required name={"project_url"} source={"project_url"} />
+        <TextInput name={"project_url"} source={"project_url"} />
+        <TextInput
+          name={"frontend_github_url"}
+          source={"frontend_github_url"}
+        />
+        <TextInput name={"backend_github_url"} source={"backend_github_url"} />
         <DateInput readOnly name={"created_at"} source="created_at" />
         <DateInput readOnly name={"updated_at"} source="updated_at" />
       </SimpleForm>

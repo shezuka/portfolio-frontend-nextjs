@@ -3,12 +3,10 @@ import {
   Datagrid,
   DateField,
   EditButton,
-  ImageField,
   List,
-  ReferenceField,
-  RichTextField,
   ShowButton,
   TextField,
+  UrlField,
 } from "react-admin";
 import AdminImage from "@/components/Admin/Components/Elements/AdminImage";
 
@@ -20,7 +18,21 @@ const ProjectList = () => {
         <AdminImage source="image_id" basePath="images" />
         <TextField source="title" />
         <TextField source="description" />
-        <TextField source="project_url" />
+        <UrlField
+          source="project_url"
+          target="_blank"
+          rel="noreferrer noopener"
+        />
+        <UrlField
+          source="frontend_github_url"
+          target="_blank"
+          rel="noreferrer noopener"
+        />
+        <UrlField
+          source="backend_github_url"
+          target="_blank"
+          rel="noreferrer noopener"
+        />
         <DateField source="created_at" />
         <DateField source="updated_at" />
         <>

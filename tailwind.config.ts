@@ -22,6 +22,18 @@ const config: Config = {
       },
       animation: {
         spin: "spin 1s linear infinite",
+        "gradient-x": "gradient-x 15s ease infinite",
+        pulse: "pulse 1.5s ease-in-out infinite",
+      },
+      keyframes: {
+        "gradient-x": {
+          "0%, 100%": { "background-position": "0% 50%" },
+          "50%": { "background-position": "100% 50%" },
+        },
+        pulse: {
+          "0%, 100%": { opacity: 0.6 },
+          "50%": { opacity: 1 },
+        },
       },
     },
     customForms: (theme: any) => ({
