@@ -31,8 +31,8 @@ const config: Config = {
           "50%": { "background-position": "100% 50%" },
         },
         pulse: {
-          "0%, 100%": { opacity: 0.6 },
-          "50%": { opacity: 1 },
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
         },
       },
     },
