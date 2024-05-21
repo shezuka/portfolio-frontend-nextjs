@@ -5,9 +5,14 @@ import { motion } from "framer-motion";
 import usePageTransition from "@/context/PageTransition/usePageTransition";
 import { ReactComponentLike } from "prop-types";
 
-const variants = {
+const contentVariants = {
   in: { opacity: 1 },
   out: { opacity: 0 },
+};
+
+const loaderVariants = {
+  in: { opacity: 0 },
+  out: { opacity: 1 },
 };
 
 interface PageTransitionContentProps {
@@ -26,14 +31,18 @@ const PageTransitionContent = (props: PageTransitionContentProps) => {
   return (
     <>
       {LoadingComponent ? (
-        <div
-          className={`fixed z-0 select-none pointer-events-none transition-opacity duration-300 opacity-${state === "out" ? 1 : 0}`}
+        <motion.div
+          initial="out"
+          animate={state}
+          variants={loaderVariants}
+          transition={transition}
+          className={`fixed z-0 select-none pointer-events-none`}
         >
           <LoadingComponent />
-        </div>
+        </motion.div>
       ) : null}
       <motion.div
-        variants={variants}
+        variants={contentVariants}
         initial="in"
         animate={state}
         transition={transition}
