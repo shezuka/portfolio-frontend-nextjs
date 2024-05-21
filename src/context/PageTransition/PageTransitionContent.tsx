@@ -43,7 +43,7 @@ const PageTransitionContent = (props: PageTransitionContentProps) => {
       ) : null}
       <motion.div
         variants={contentVariants}
-        initial="in"
+        initial="out"
         animate={state}
         transition={transition}
       >

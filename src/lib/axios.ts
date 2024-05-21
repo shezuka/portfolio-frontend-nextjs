@@ -1,7 +1,11 @@
 import { Axios } from "axios";
 
+const baseURL = process.env.BACKEND_HOSTNAME
+  ? `${process.env.BACKEND_HOSTNAME}/api`
+  : "/api";
+
 const axios = new Axios({
-  baseURL: "/api",
+  baseURL,
 });
 
 axios.interceptors.request.use((config) => {
