@@ -3,6 +3,7 @@
 import { Project } from "@/types";
 import { MouseEventHandler } from "react";
 import Card from "@/components/Elements/Card";
+import { getImageUrl } from "@/lib/hostname";
 
 type ProjectCardProps = {
   project: Project;
@@ -19,7 +20,7 @@ const ProjectCard = ({
   return (
     <Card
       logo={{
-        url: `/api/images/${image_id}`,
+        url: getImageUrl(image_id),
         alt: `${title} logo`,
         width: 285,
         height: 140,

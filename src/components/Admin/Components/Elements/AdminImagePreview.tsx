@@ -1,4 +1,5 @@
 import { useInput } from "ra-core";
+import { getBackendHostname } from "@/lib/hostname";
 
 type AdminImageProps = {
   source: string;
@@ -12,7 +13,7 @@ const AdminImage = ({ source, basePath }: AdminImageProps) => {
 
   return (
     <img
-      src={`/api/${basePath}/${input.field.value}`}
+      src={`${getBackendHostname()}/api/${basePath}/${input.field.value}`}
       alt="Project Image"
       style={{ maxWidth: "200px", maxHeight: "200px" }}
     />

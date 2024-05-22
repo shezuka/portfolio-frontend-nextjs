@@ -1,4 +1,5 @@
 import { useRecordContext } from "ra-core";
+import { getBackendHostname } from "@/lib/hostname";
 
 type AdminImageProps = {
   source: string;
@@ -12,7 +13,7 @@ const AdminImage = ({ source, basePath }: AdminImageProps) => {
 
   return (
     <img
-      src={`/api/${basePath}/${record[source]}`}
+      src={`${getBackendHostname()}/api/${basePath}/${record[source]}`}
       alt="Project Image"
       style={{ maxWidth: "200px", maxHeight: "200px" }}
     />

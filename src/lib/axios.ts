@@ -1,8 +1,7 @@
 import { Axios } from "axios";
+import { getBackendHostname } from "@/lib/hostname";
 
-const baseURL = process.env.BACKEND_HOSTNAME
-  ? `${process.env.BACKEND_HOSTNAME}/api`
-  : "/api";
+const baseURL = `${getBackendHostname() ?? ""}/api`;
 
 const axios = new Axios({
   baseURL,
