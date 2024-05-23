@@ -4,7 +4,6 @@ import {
   Create,
   ImageInput,
   SimpleForm,
-  TextInput,
   useDataProvider,
   useNotify,
   useRedirect,

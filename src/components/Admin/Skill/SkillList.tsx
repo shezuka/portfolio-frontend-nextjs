@@ -4,7 +4,6 @@ import {
   BooleanField,
   Datagrid,
   DateField,
-  EditActions,
   EditButton,
   List,
   ReferenceField,

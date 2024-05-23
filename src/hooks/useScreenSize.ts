@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useScreenSize = () => {
   const [size, setSize] = useState({ width: 0, height: 0 });

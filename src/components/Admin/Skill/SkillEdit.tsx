@@ -2,12 +2,10 @@
 
 import {
   BooleanInput,
-  Create,
   DateInput,
   Edit,
   ReferenceInput,
   SimpleForm,
-  TextField,
   TextInput,
 } from "react-admin";
 

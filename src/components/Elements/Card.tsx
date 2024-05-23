@@ -3,7 +3,6 @@
 import { MouseEventHandler, ReactNode } from "react";
 import { motion } from "framer-motion";
 import ImageLoader from "@/components/Functional/ImageLoader";
-import classNames from "classnames";
 
 type CardLogo = {
   url: string;
