@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import axios from "@/lib/axios";
 import AdminImagePreview from "@/components/Admin/Components/Elements/AdminImagePreview";
 import { useParams } from "react-router";
+import { RichTextInput } from "ra-input-rich-text";
 
 const ProjectEdit = () => {
   const { id } = useParams();
@@ -58,7 +59,7 @@ const ProjectEdit = () => {
           <AdminImagePreview source={"image_id"} basePath={"images"} />
         </ImageInput>
         <TextInput required name={"title"} source={"title"} />
-        <TextInput required name={"description"} source={"description"} />
+        <RichTextInput name={"description"} source={"description"} />
         <TextInput name={"project_url"} source={"project_url"} />
         <TextInput
           name={"frontend_github_url"}

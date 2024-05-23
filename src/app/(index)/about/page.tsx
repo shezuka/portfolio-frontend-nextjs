@@ -1,6 +1,14 @@
 import React from "react";
 import Section from "@/components/Elements/Section";
 import AboutMe from "@/components/Functional/AboutMe";
+import { Metadata } from "next";
+import { BuildMetadata } from "@/data/Metadata";
+
+export const metadata: Metadata = BuildMetadata({
+  title: "About Me",
+  description:
+    "Discover Dmytro Horbalynskyi, a Full-Stack Developer skilled in React and modern web tech. Learn about his journey and expertise.",
+});
 
 interface AboutPageProps {}
 

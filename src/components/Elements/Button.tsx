@@ -5,19 +5,28 @@ type ButtonProps = {
   rounded?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   submit?: boolean;
+  className?: string;
 };
 
-const Button = ({ children, rounded, submit, onClick }: ButtonProps) => {
-  const className = [
+const Button = ({
+  children,
+  rounded,
+  submit,
+  onClick,
+  className,
+}: ButtonProps) => {
+  const classes = [
     "transition duration-200 bg-blue-600 hover:bg-blue-800 text-gray-100 font-bold py-2 px-4",
   ];
   const type = submit === true ? "submit" : "button";
 
-  if (rounded) className.push("rounded-full");
-  else className.push("rounded");
+  if (rounded) classes.push("rounded-full");
+  else classes.push("rounded");
+
+  if (className) classes.push(className);
 
   return (
-    <button className={className.join(" ")} type={type} onClick={onClick}>
+    <button className={classes.join(" ")} type={type} onClick={onClick}>
       {children}
     </button>
   );

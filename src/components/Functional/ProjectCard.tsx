@@ -19,6 +19,7 @@ const ProjectCard = ({
 
   return (
     <Card
+      title={title}
       logo={{
         url: getImageUrl(image_id),
         alt: `${title} logo`,
@@ -27,8 +28,7 @@ const ProjectCard = ({
       }}
       onClick={onCardClick}
     >
-      <h3 className="text-xl text-white font-bold mb-2">{title}</h3>
-      <p className="text-md text-gray-300">{description}</p>
+      <div dangerouslySetInnerHTML={{ __html: description }} />
     </Card>
   );
 };

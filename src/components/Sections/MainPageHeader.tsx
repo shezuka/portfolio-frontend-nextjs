@@ -1,7 +1,9 @@
 import React from "react";
+import Image from "next/image";
 import ImageLoader from "@/components/Functional/ImageLoader";
 import SocialMediaButton from "@/components/Elements/SocialMediaButton";
 import { faFacebook, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import ProfileImage from "@public/profile.jpg";
 
 interface MainPageHeaderProps {}
 
@@ -9,9 +11,9 @@ const MainPageHeader = (props: MainPageHeaderProps) => {
   return (
     <header className="relative header-gradient min-h-screen flex flex-col justify-center items-center text-center p-5 md:p-10 lg:p-15 xl:p-20 mt-[-3rem]">
       <ImageLoader loaderWrapperClassName="rounded-full">
-        <img
+        <Image
           className="rounded-full w-60 h-auto"
-          src={"/profile.jpg"}
+          src={ProfileImage}
           alt={"Profile image"}
         />
       </ImageLoader>
@@ -42,7 +44,7 @@ const MainPageHeader = (props: MainPageHeaderProps) => {
         Engineering Impactful Software Experiences
       </h1>
       <p className="text-xl text-gray-200">
-        Dmytro Horbalynskyi | Senior Full-Stack Developer & React Expert
+        Dima Horbalynskyi | Senior Full-Stack Developer & React Expert
       </p>
     </header>
   );

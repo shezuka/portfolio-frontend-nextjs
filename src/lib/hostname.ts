@@ -1,4 +1,8 @@
-export const getBackendHostname = () => {
+export const getBackendHostname = (usePublic: boolean = false) => {
+  if (usePublic) {
+    return process.env.NEXT_PUBLIC_BACKEND_HOSTNAME ?? null;
+  }
+
   if (process.env.BACKEND_HOSTNAME) {
     return process.env.BACKEND_HOSTNAME;
   } else if (process.env.NEXT_PUBLIC_BACKEND_HOSTNAME) {
@@ -8,5 +12,5 @@ export const getBackendHostname = () => {
 };
 
 export const getImageUrl = (imageId: number) => {
-  return `${getBackendHostname()}/api/images/${imageId}`;
+  return `${getBackendHostname(true)}/api/images/${imageId}`;
 };

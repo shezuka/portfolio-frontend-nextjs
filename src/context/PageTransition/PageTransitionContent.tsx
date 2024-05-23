@@ -32,7 +32,7 @@ const PageTransitionContent = (props: PageTransitionContentProps) => {
     <>
       {LoadingComponent ? (
         <motion.div
-          initial="out"
+          initial="in"
           animate={state}
           variants={loaderVariants}
           transition={transition}
@@ -43,7 +43,7 @@ const PageTransitionContent = (props: PageTransitionContentProps) => {
       ) : null}
       <motion.div
         variants={contentVariants}
-        initial="out"
+        initial="in"
         animate={state}
         transition={transition}
       >

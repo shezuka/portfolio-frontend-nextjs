@@ -14,10 +14,6 @@ const MenuItems: MenuItem[] = [
     link: "/about",
     label: "About",
   },
-  {
-    link: "/contact",
-    label: "Contact",
-  },
 ];
 
 export default MenuItems;

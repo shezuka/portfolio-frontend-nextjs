@@ -6,69 +6,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import React, { ReactNode } from "react";
 import RecaptchaProvider from "@/components/Functional/RecaptchaProvider";
+import { BuildMetadata } from "@/data/Metadata";
 
 config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });
 
-const defaultTitle = "Dmytro Horbalynskyi | Portfolio";
-const defaultDescription =
-  "Explore the world of Dmyto Horbalynskyi, a seasoned Full-Stack Developer skilled in React and modern web tech. Discover projects where innovation meets design.";
-
-export const metadata: Metadata = {
-  title: defaultTitle,
-  description: defaultDescription,
-  keywords: [
-    "Dmytro",
-    "Horbalynskyi",
-    "Dmytro Horbalynskyi",
-    "project",
-    "projects",
-    "Software",
-    "experience",
-    "experienced",
-    "frontend",
-    "backend",
-    "Engineering",
-    "Impactful",
-    "development",
-    "website",
-  ],
-  openGraph: {
-    type: "website",
-    title: defaultTitle,
-    siteName: defaultTitle,
-    description: defaultDescription,
-    url: process.env.WEBSITE_URL,
-    images: [process.env.WEBSITE_URL + "/site-image.jpg"],
-  },
-  twitter: {
-    title: defaultTitle,
-    description: defaultDescription,
-    creator: "@dihordev",
-    site: process.env.WEBSITE_URL,
-    images: [process.env.WEBSITE_URL + "/site-image.jpg"],
-    card: "summary_large_image",
-  },
-  icons: [
-    {
-      url: process.env.WEBSITE_URL + "/favicon.ico",
-      rel: "shortcut icon",
-      href: process.env.WEBSITE_URL + "/favicon.ico",
-    },
-    {
-      url: process.env.WEBSITE_URL + "/apple-touch-icon.png",
-      href: process.env.WEBSITE_URL + "/apple-touch-icon.png",
-      rel: "apple-touch-icon",
-      sizes: "180x180",
-    },
-    {
-      url: process.env.WEBSITE_URL + "/site.webmanifest",
-      href: process.env.WEBSITE_URL + "/site.webmanifest",
-      rel: "manifest",
-    },
-  ],
-};
+export const metadata: Metadata = BuildMetadata();
 
 const RootLayout = ({
   children,

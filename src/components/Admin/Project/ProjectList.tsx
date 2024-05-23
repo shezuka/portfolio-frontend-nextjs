@@ -4,6 +4,7 @@ import {
   DateField,
   EditButton,
   List,
+  RichTextField,
   ShowButton,
   TextField,
   UrlField,
@@ -17,7 +18,7 @@ const ProjectList = () => {
         <TextField source="id" />
         <AdminImage source="image_id" basePath="images" />
         <TextField source="title" />
-        <TextField source="description" />
+        <RichTextField source="description" />
         <UrlField
           source="project_url"
           target="_blank"

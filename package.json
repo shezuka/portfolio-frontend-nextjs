@@ -18,7 +18,7 @@
     "framer-motion": "^11.2.4",
     "next": "14.2.3",
     "ra-data-simple-rest": "^4.16.17",
-    "ra-input-rich-text": "^4.16.17",
+    "ra-input-rich-text": "^4.16.18",
     "react": "^18",
     "react-admin": "^4.16.17",
     "react-dom": "^18",

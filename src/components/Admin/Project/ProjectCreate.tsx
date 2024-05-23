@@ -11,6 +11,7 @@ import {
 } from "react-admin";
 import { useState } from "react";
 import axios from "@/lib/axios";
+import { RichTextInput } from "ra-input-rich-text";
 
 const ProjectCreate = () => {
   const [image, setImage] = useState<File | null>(null);
@@ -48,7 +49,7 @@ const ProjectCreate = () => {
     <Create>
       <SimpleForm onSubmit={saveProject}>
         <TextInput required name={"title"} source={"title"} />
-        <TextInput required name={"description"} source={"description"} />
+        <RichTextInput name={"description"} source={"description"} />
         <TextInput name={"project_url"} source={"project_url"} />
         <TextInput
           name={"frontend_github_url"}
