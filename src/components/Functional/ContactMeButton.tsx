@@ -10,6 +10,7 @@ import useRecaptcha from "@/hooks/useRecaptcha";
 const ContactMeButton = () => {
   const { getToken } = useRecaptcha();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const onClick = () => {
     setIsModalOpen(true);
@@ -17,21 +18,25 @@ const ContactMeButton = () => {
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSending(true);
 
-    const token = await getToken("send_message");
-    if (!token) {
-      console.error(new Error("Failed to get captcha token"));
-      return;
-    }
+    try {
+      const token = await getToken("send_message");
+      if (!token) {
+        console.error(new Error("Failed to get captcha token"));
+        return;
+      }
 
-    const formData = new FormData(e.target as HTMLFormElement);
-    const data = Object.fromEntries(formData.entries());
-    axios
-      .post("/messages", {
+      const formData = new FormData(e.target as HTMLFormElement);
+      const data = Object.fromEntries(formData.entries());
+      await axios.post("/messages", {
         ...data,
         captcha_token: token,
-      })
-      .then(() => setIsModalOpen(false));
+      });
+      setIsModalOpen(false);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -41,7 +46,7 @@ const ContactMeButton = () => {
       </Button>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <ContactMeForm onSubmit={onSubmit} />
+        <ContactMeForm block={sending} onSubmit={onSubmit} />
       </Modal>
     </>
   );

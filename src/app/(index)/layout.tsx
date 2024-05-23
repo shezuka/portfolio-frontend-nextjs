@@ -15,7 +15,7 @@ const IndexLayout = (props: IndexLayoutProps) => {
   return (
     <>
       <div className="min-h-[100vh] pt-12 pb-16 lg:pb-0 text-white bg-gray-900">
-        <PageTransitionProvider transitionDuration={0.25}>
+        <PageTransitionProvider transitionDuration={0.15}>
           <DesktopMenu />
           <MobileMenu />
           <PageTransitionContent loadingComponent={Loading}>

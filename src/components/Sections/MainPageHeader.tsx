@@ -4,6 +4,7 @@ import ImageLoader from "@/components/Functional/ImageLoader";
 import SocialMediaButton from "@/components/Elements/SocialMediaButton";
 import { faFacebook, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import ProfileImage from "@public/profile.jpg";
+import SkillSetIcons from "@/components/Functional/SkillSetIcons";
 
 interface MainPageHeaderProps {}
 
@@ -46,6 +47,10 @@ const MainPageHeader = (props: MainPageHeaderProps) => {
       <p className="text-xl text-gray-200">
         Dima Horbalynskyi | Senior Full-Stack Developer & React Expert
       </p>
+
+      <div className="my-3">
+        <SkillSetIcons />
+      </div>
     </header>
   );
 };

@@ -11,6 +11,10 @@ const MenuItems: MenuItem[] = [
     label: "Home",
   },
   {
+    link: "/skills",
+    label: "Skills",
+  },
+  {
     link: "/about",
     label: "About",
   },

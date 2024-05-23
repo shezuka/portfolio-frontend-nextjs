@@ -6,6 +6,7 @@ type ButtonProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   submit?: boolean;
   className?: string;
+  disabled?: boolean;
 };
 
 const Button = ({
@@ -14,6 +15,7 @@ const Button = ({
   submit,
   onClick,
   className,
+  disabled,
 }: ButtonProps) => {
   const classes = [
     "transition duration-200 bg-blue-600 hover:bg-blue-800 text-gray-100 font-bold py-2 px-4",
@@ -26,7 +28,12 @@ const Button = ({
   if (className) classes.push(className);
 
   return (
-    <button className={classes.join(" ")} type={type} onClick={onClick}>
+    <button
+      className={classes.join(" ")}
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

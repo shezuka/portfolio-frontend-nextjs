@@ -15,6 +15,8 @@ const loaderVariants = {
   out: { opacity: 1 },
 };
 
+const INITIAL_STATE = "in";
+
 interface PageTransitionContentProps {
   children: ReactNode;
   loadingComponent?: ReactComponentLike;
@@ -32,7 +34,7 @@ const PageTransitionContent = (props: PageTransitionContentProps) => {
     <>
       {LoadingComponent ? (
         <motion.div
-          initial="in"
+          initial={INITIAL_STATE}
           animate={state}
           variants={loaderVariants}
           transition={transition}
@@ -43,7 +45,7 @@ const PageTransitionContent = (props: PageTransitionContentProps) => {
       ) : null}
       <motion.div
         variants={contentVariants}
-        initial="in"
+        initial={INITIAL_STATE}
         animate={state}
         transition={transition}
       >

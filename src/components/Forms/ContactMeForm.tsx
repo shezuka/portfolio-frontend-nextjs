@@ -1,15 +1,31 @@
 "use client";
 
-import React, { FormEventHandler } from "react";
+import React, { FormEvent, FormEventHandler, useRef } from "react";
 import Button from "@/components/Elements/Button";
 
 type ContactMeFormProps = {
   onSubmit: FormEventHandler<HTMLFormElement>;
+  block?: boolean;
 };
 
 const ContactMeForm = (props: ContactMeFormProps) => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const block = props.block === true;
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    if (block) return;
+    try {
+      const res: any = await props.onSubmit(e);
+      if (res || res === undefined) {
+        formRef.current?.reset();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
-    <form onSubmit={props.onSubmit} className="space-y-4">
+    <form ref={formRef} onSubmit={onSubmit} className="space-y-4">
       <div>
         <label
           htmlFor="name"
@@ -57,7 +73,9 @@ const ContactMeForm = (props: ContactMeFormProps) => {
         ></textarea>
       </div>
       <div>
-        <Button submit>Send Message</Button>
+        <Button disabled={block} submit>
+          Send Message
+        </Button>
       </div>
     </form>
   );

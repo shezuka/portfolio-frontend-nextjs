@@ -45,6 +45,9 @@ const Card = (props: CardProps) => {
       viewport={{ once: true, amount: 0.8 }}
       initial="offscreen"
       whileInView="onscreen"
+      whileTap="onscreen"
+      whileFocus="onscreen"
+      whileHover="onscreen"
       className="first:mt-0 mt-6"
     >
       <motion.div
@@ -55,18 +58,15 @@ const Card = (props: CardProps) => {
         onClick={props.onClick}
       >
         {props.logo ? (
-          <div
-            className="relative w-full overflow-hidden"
-            style={{ height: "140px" }}
-          >
+          <div className="relative w-full overflow-hidden">
             <ImageLoader
-              containerClassName="relative w-full h-full  rounded-tl-md rounded-tr-md overflow-hidden"
+              containerClassName="relative w-full h-full rounded-tl-md rounded-tr-md overflow-hidden"
               loaderWrapperClassName="rounded-tl-lg rounded-tr-lg"
             >
               <img
                 src={props.logo.url}
                 alt={props.logo.alt}
-                className={`absolute w-full h-auto top-[50%] left-0 transform -translate-y-1/2`}
+                className={`relative object-center object-cover w-full h-full`}
               />
             </ImageLoader>
           </div>
@@ -76,7 +76,7 @@ const Card = (props: CardProps) => {
             {props.title}
           </h3>
         ) : null}
-        <div className="p-4">{props.children}</div>
+        {props.children}
       </motion.div>
     </motion.div>
   );
