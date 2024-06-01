@@ -1,14 +1,8 @@
 "use client";
 
-import {
-  MouseEventHandler,
-  ReactNode,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import Image from "next/image";
-import Spinner from "@/components/Elements/Spinner";
+import { MouseEventHandler, ReactNode } from "react";
+import { motion } from "framer-motion";
+import ImageLoader from "@/components/Functional/ImageLoader";
 
 type CardLogo = {
   url: string;
@@ -20,54 +14,71 @@ type CardLogo = {
 type CardProps = {
   children?: ReactNode;
   onClick?: MouseEventHandler<HTMLDivElement>;
+  title?: string;
   logo?: CardLogo;
 };
 
+const rootVariants = {
+  offscreen: {
+    opacity: 0,
+    scale: 0,
+  },
+  onscreen: {
+    opacity: 1,
+    scale: 1,
+  },
+};
+
+const innerVariants = {
+  initial: {
+    boxShadow: "0 0 40px rgba(127, 177, 233, 0)",
+  },
+  hover: {
+    boxShadow: "0 0 40px rgba(107, 157, 213, 1)",
+  },
+};
+
 const Card = (props: CardProps) => {
-  const imageRef = useRef<HTMLImageElement>(null);
-  const [imageLoading, setImageLoading] = useState(false);
-
-  useEffect(() => {
-    if (!imageRef.current) {
-      setImageLoading(false);
-      return;
-    }
-
-    if (imageRef.current.complete) {
-      setImageLoading(false);
-    } else {
-      setImageLoading(true);
-      imageRef.current.onload = () => {
-        setImageLoading(false);
-      };
-    }
-  }, [props.logo]);
-
   return (
-    <div
-      className="bg-secondary rounded-lg shadow-lg cursor-pointer hover:bg-primary hover:shadow-xl transition duration-300 select-none"
-      onClick={props.onClick}
+    <motion.div
+      variants={rootVariants}
+      viewport={{ once: true, amount: 0.8 }}
+      initial="offscreen"
+      whileInView="onscreen"
+      whileTap="onscreen"
+      whileFocus="onscreen"
+      whileHover="onscreen"
+      className="first:mt-0 mt-6"
     >
-      {props.logo ? (
-        <div
-          className="relative w-full overflow-hidden"
-          style={{ height: "140px" }}
-        >
-          <img
-            ref={imageRef}
-            src={props.logo.url}
-            alt={props.logo.alt}
-            className={`w-full h-full object-cover object-center rounded-tl-lg rounded-tr-lg`}
-          />
-          <div
-            className={`flex justify-center items-center absolute top-0 left-0 right-0 bottom-0 rounded-tl-lg rounded-tr-lg bg-gray-200 pointer-events-none transition-opacity duration-300 ${imageLoading ? "opacity-1" : "opacity-0"}`}
-          >
-            <Spinner />
+      <motion.div
+        variants={innerVariants}
+        whileHover="hover"
+        transition={{ delay: 0, duration: 0.1 }}
+        className="bg-gray-800 rounded-lg cursor-pointer select-none transition duration-300 border-2 border-gray-600 hover:border-blue-300 scale-100 hover:scale-105"
+        onClick={props.onClick}
+      >
+        {props.logo ? (
+          <div className="relative w-full overflow-hidden">
+            <ImageLoader
+              containerClassName="relative w-full h-full rounded-tl-md rounded-tr-md overflow-hidden"
+              loaderWrapperClassName="rounded-tl-lg rounded-tr-lg"
+            >
+              <img
+                src={props.logo.url}
+                alt={props.logo.alt}
+                className={`relative object-center object-cover w-full h-full`}
+              />
+            </ImageLoader>
           </div>
-        </div>
-      ) : null}
-      <div className="p-4">{props.children}</div>
-    </div>
+        ) : null}
+        {props.title ? (
+          <h3 className="p-4 pb-0 text-lg font-bold text-gray-100">
+            {props.title}
+          </h3>
+        ) : null}
+        {props.children}
+      </motion.div>
+    </motion.div>
   );
 };
 

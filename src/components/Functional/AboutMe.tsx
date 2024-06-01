@@ -6,15 +6,28 @@ function Paragraph({ children }: { children: React.ReactNode }) {
   );
 }
 
+const getYearsOfExperience = (): number => {
+  const startDate = new Date(2014, 11);
+  const currentDate = new Date();
+  const yearsDifference = currentDate.getFullYear() - startDate.getFullYear();
+  const isBefore =
+    currentDate.getMonth() < startDate.getMonth() ||
+    (currentDate.getMonth() === startDate.getMonth() &&
+      currentDate.getDate() < startDate.getDate());
+
+  return isBefore ? yearsDifference - 1 : yearsDifference;
+};
+
 const AboutMe = () => {
   return (
     <>
       <Paragraph>
-        I am a seasoned Full-Stack Developer with over 9 years of experience,
-        specializing in both frontend and backend development. My expertise in
-        React and Node.js is complemented by a robust background in backend
-        technologies, particularly Ruby on Rails and PHP, which has enabled me
-        to effectively handle the full spectrum of web development tasks.
+        I am a seasoned Full-Stack Developer with over {getYearsOfExperience()}{" "}
+        years of experience, specializing in both frontend and backend
+        development. My expertise in React and Node.js is complemented by a
+        robust background in backend technologies, particularly Ruby on Rails
+        and PHP, which has enabled me to effectively handle the full spectrum of
+        web development tasks.
       </Paragraph>
       <Paragraph>
         My journey in tech began shortly after graduating from Computer Academy

@@ -50,3 +50,27 @@
         background-size: 200% 200%;
     }
 }
+
+@keyframes loading-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-loading-gradient {
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    background: linear-gradient(270deg, #7b2cbf, #9d4edd, #5a189a, #3c096c, #240046, #4a148c, #6a1b9a, #8e24aa);
+}
