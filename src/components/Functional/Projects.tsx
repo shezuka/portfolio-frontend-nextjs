@@ -1,8 +1,7 @@
 import ProjectCard from "@/components/Functional/ProjectCard";
 import { Project } from "@/types";
 import axios from "@/lib/axios";
-
-export const dynamic = "force-dynamic";
+import { unstable_noStore } from "next/cache";
 
 const getProjectsData = async (): Promise<Project[]> => {
   try {
@@ -18,6 +17,7 @@ const getProjectsData = async (): Promise<Project[]> => {
 };
 
 const Projects = async () => {
+  unstable_noStore();
   const projects = await getProjectsData();
   return projects.map((project) => (
     <ProjectCard key={project.id} project={project} />

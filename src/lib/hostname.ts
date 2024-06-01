@@ -1,4 +1,6 @@
-export const getBackendHostname = (usePublic: boolean = false) => {
+export const getBackendHostname = (
+  usePublic: boolean = false,
+): string | null => {
   if (usePublic) {
     return process.env.NEXT_PUBLIC_BACKEND_HOSTNAME ?? null;
   }
@@ -8,6 +10,7 @@ export const getBackendHostname = (usePublic: boolean = false) => {
   } else if (process.env.NEXT_PUBLIC_BACKEND_HOSTNAME) {
     return process.env.NEXT_PUBLIC_BACKEND_HOSTNAME;
   }
+
   return null;
 };
 
